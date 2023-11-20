@@ -6,5 +6,82 @@
 </head>
 <body>
 
+<form id="new_project" action="#" method="post" class="new-project-form">
+    <fieldset class="new-project-form__fieldset">
+        <legend class="new-project-form__legend">General</legend>
+
+        <label for="company-name">Company name:</label>
+        <input type="text" id="company-name" class="new-project-form__text" value="Company name"
+               placeholder="Company name">
+
+        <label for="project-name">Project name:</label>
+        <input type="text" id="project-name" class="new-project-form__text" value="New project"
+               placeholder="Project name">
+
+    </fieldset>
+
+    <fieldset class="new-project-form__fieldset">
+        <legend class="new-project-form__legend">Parameters</legend>
+
+        <label for="bar-length">Bar length, mm:</label>
+        <input type="text" id="bar-length" class="new-project-form__text" value="6000" placeholder="6000">
+    </fieldset>
+
+    <fieldset class="new-project-form__fieldset">
+        <legend>Data</legend>
+        <input type="radio" id="enter-data" name="enter-type">
+        <label for="enter-data" class="new-project-form__legend">"Enter data"</label>
+        <fieldset>
+            <label for="elements-length">Elements length, mm:</label>
+            <textarea id="elements-length" class="new-project-form__text" value=""
+                      placeholder="1200,580,3500,2700x5,2000x6"></textarea>
+        </fieldset>
+
+
+        <input type="radio" id="import-data" name="enter-type" class="new-project-form__radio">
+        <label for="import-data"  class="new-project-form__legend">Import data from Revit</label>
+
+        <fieldset>
+            <label for="file">Choose file: </label><input type="file" id="file">
+            <p>Check revit export parameters</p>
+            <label for="export-title">export title</label><input type="checkbox" id="export-title">
+            <label for="export-column-headers">export column headers</label><input type="checkbox"
+                                                                                   id="export-column-headers">
+            <label for="include-group-column-headers">include group column headers</label><input type="checkbox"
+                                                                                                 id="include-group-column-headers">
+            <label for="export-group-headers-footers-blank-lines">export group headers footers blank lines</label><input
+                type="checkbox" id="export-group-headers-footers-blank-lines">
+            <label for="field-delimiter">field delimiter</label><select id="field-delimiter" name="field-delimiter"
+                                                                        size="4" multiple>
+            <option selected value="field-delimiter-semicolon">;</option>
+            <option value="field-delimiter-comma">,</option>
+            <option value="field-delimiter-tab">(tab)</option>
+            <option value="field-delimiter-space">(space)</option>
+        </select>
+            <label for="text-qualifier">text qualifier</label><select id="text-qualifier" name="text-qualifier" size="3"
+                                                                      multiple>
+            <option selected value="text-qualifier-double-quotes">"</option>
+            <option value="text-qualifier-single-quotes">'</option>
+            <option value="text-qualifier-none">(none)</option>
+        </select>
+        </fieldset>
+
+
+    </fieldset>
+    <button id="calculate">calculate</button>
+</form>
 </body>
 </html>
+
+
+<!--
+'companyName': 'ECK',
+  'projectName':
+      file: string
+    isRevitExport: boolean
+    exportTitle: boolean
+    exportColumnHeaders: boolean
+    includeGroupColumnHeaders: boolean
+    exportGroupHeadersFootersBlankLines: boolean
+    fieldDelimiter: `;` | `,` | `\t` | ` `
+    textQualifier: `'` | `"` | ``
