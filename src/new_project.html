@@ -39,30 +39,33 @@
 
 
         <input type="radio" id="import-data" name="enter-type" class="new-project-form__radio">
-        <label for="import-data"  class="new-project-form__legend">Import data from Revit</label>
+        <label for="import-data" class="new-project-form__legend">Import data from Revit</label>
 
         <fieldset>
             <label for="file">Choose file: </label><input type="file" id="file">
             <p>Check revit export parameters</p>
-            <label for="export-title">export title</label><input type="checkbox" id="export-title">
+            <label for="export-title">export title</label>
+            <input type="checkbox" id="export-title">
             <label for="export-column-headers">export column headers</label><input type="checkbox"
                                                                                    id="export-column-headers">
             <label for="include-group-column-headers">include group column headers</label><input type="checkbox"
                                                                                                  id="include-group-column-headers">
             <label for="export-group-headers-footers-blank-lines">export group headers footers blank lines</label><input
                 type="checkbox" id="export-group-headers-footers-blank-lines">
-            <label for="field-delimiter">field delimiter</label><select id="field-delimiter" name="field-delimiter"
+            <label for="field-delimiter">field delimiter</label>
+            <select id="field-delimiter" name="field-delimiter"
                                                                         size="4" multiple>
-            <option selected value="field-delimiter-semicolon">;</option>
-            <option value="field-delimiter-comma">,</option>
-            <option value="field-delimiter-tab">(tab)</option>
-            <option value="field-delimiter-space">(space)</option>
+            <option selected value="semicolon">;</option>
+            <option value="comma">,</option>
+            <option value="tab">(tab)</option>
+            <option value="space">(space)</option>
         </select>
-            <label for="text-qualifier">text qualifier</label><select id="text-qualifier" name="text-qualifier" size="3"
+            <label for="text-qualifier">text qualifier</label>
+            <select id="text-qualifier" name="text-qualifier" size="3"
                                                                       multiple>
-            <option selected value="text-qualifier-double-quotes">"</option>
-            <option value="text-qualifier-single-quotes">'</option>
-            <option value="text-qualifier-none">(none)</option>
+            <option selected value="double-quotes">"</option>
+            <option value="single-quotes">'</option>
+            <option value="none">(none)</option>
         </select>
         </fieldset>
 
@@ -70,6 +73,7 @@
     </fieldset>
     <button id="calculate">calculate</button>
 </form>
+<script src="js/modules/new-project.js"></script>
 </body>
 </html>
 
