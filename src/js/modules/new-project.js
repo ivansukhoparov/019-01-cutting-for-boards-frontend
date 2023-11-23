@@ -1,7 +1,7 @@
+const BACK_URL = "http://localhost:3000/input";
 const formNewProject = document.querySelector("#new_project");
 const submitButton = formNewProject.querySelector("#calculate")
-const submitsButton = formNewProject.querySelector("#text-qualifier")
-console.log(submitsButton)
+
 const FORM_TAGS = ["INPUT", "TEXTAREA"];
 const idToKey = function (id) {
     return id.split("-")
@@ -26,12 +26,14 @@ const collectDataFromForm = function (input) {
     return output
 }
 
-
 submitButton.addEventListener("click", (evt) => {
     evt.preventDefault()
     formData = collectDataFromForm(formNewProject)
-    console.log(formData)
-
+   // console.log(formData)
+    fetch(BACK_URL,
+        {method:"POST",
+        body:JSON.stringify(formData),
+        headers:"application/json"})
+        .then(res=>res.json())
+        .then(json=>console.log(json))
 })
-
-
